@@ -1048,6 +1048,7 @@ def _check_for_cached_results(
                     return {"has_valid_cache": False}  # pragma: no cover
 
                 comparison_query: Optional[str]
+                print('QUERY INFO: ', query_info, '\n')
                 if query_info["StatementType"] == "DDL" and query_info["Query"].startswith("CREATE TABLE"):
                     parsed_query: Optional[str] = _parse_select_query_from_possible_ctas(query_info["Query"])
                     if parsed_query is not None:
